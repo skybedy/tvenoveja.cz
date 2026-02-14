@@ -9,7 +9,35 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // zde si můžeš přidat vlastní barvy pokud budeš chtít
+                    }
+                }
+            },
+            plugins: [
+                function ({ addComponents }) {
+                    addComponents({
+                        '.section-page': {
+                            '@apply h-screen pt-[69px] flex flex-col items-center justify-center overflow-hidden scroll-mt-0': {},
+                        },
+                        '.section-dark': {
+                            '@apply bg-black flex items-center justify-center overflow-hidden': {},
+                        },
+                        '.section-accent': {
+                            '@apply flex items-center justify-center px-8 md:px-24': {},
+                        },
+                        '.section-title': {
+                            '@apply text-3xl md:text-5xl font-serif leading-tight': {},
+                        },
+                    })
+                }
+            ]
+        }
+    </script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -46,7 +74,7 @@
 
 <body class="bg-white text-slate-900">
 
-    <nav class="fixed top-0 w-full bg-white backdrop-blur-sm z-50 border-b border-slate-100">
+    <nav class="fixed top-0 w-full bg-white backdrop-blur-sm z-50 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-8 md:px-24 py-6 flex justify-between items-center">
             <div class="text-sm tracking-widest font-semibold uppercase">Tvé nové já</div>
 
@@ -88,8 +116,8 @@
         </div>
     </nav>
 
-    <section id="home" class="h-screen flex flex-col items-center justify-center px-6 md:px-24 text-center pt-16">
-        <div class="max-w-3xl mx-auto">
+    <section id="home" class="section-page">
+        <div class="max-w-7xl mx-auto">
             <h1 class="text-5xl md:text-8xl mb-6 text-black">Tvé nové já</h1>
 
             <div class="w-12 h-[1px] bg-black mx-auto mb-10"></div>
@@ -98,7 +126,7 @@
                 Podpora žen ve vztazích a náročných životních obdobích
             </h2>
 
-            <p class="text-slate-400 text-sm md:text-base mb-12 tracking-wide font-light">
+            <p class="text-slate-600 text-sm md:text-base mb-12 tracking-wide font-light">
                 Pro chvíle, kdy se něco rozpadá a ty potřebuješ znovu najít pevný bod.
             </p>
 
@@ -107,7 +135,7 @@
                 Napiš mi o oporu
             </a>
 
-            <p class="mt-12 text-slate-400 text-[13px] serif-italic italic opacity-70">
+            <p class="mt-12 text-slate-700 text-[14px] serif-italic italic opacity-70">
                 „Nejsi sama. Když se všechno mění, tvůj klid je tvou největší silou.“
             </p>
         </div>
@@ -117,7 +145,7 @@
         <div class="max-w-7xl mx-auto px-8 md:px-24 grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
 
             <div class="space-y-6 md:space-y-8">
-                <span class="text-[10px] uppercase tracking-[0.5em] text-slate-300 font-semibold block">O
+                <span class="text-[10px] uppercase tracking-[0.5em] text-slate-600 font-semibold block">O
                     projektu</span>
                 <h2 class="text-4xl md:text-6xl font-serif leading-tight text-slate-900">
                     Bezpečný prostor pro tvoji cestu
@@ -132,21 +160,21 @@
             <div class="flex flex-col">
                 <div class="border-t border-slate-100 py-10 first:border-t-0">
                     <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-4 text-black">Znovu najít hlas</h3>
-                    <p class="text-slate-400 text-sm italic font-light serif-italic leading-relaxed">
+                    <p class="text-slate-500 text-sm italic font-light serif-italic leading-relaxed">
                         Když se okolní svět zhroutí, tvoje vnitřní síla je to, co zůstává.
                     </p>
                 </div>
 
                 <div class="border-t border-slate-100 py-10">
                     <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-4 text-black">Klidná přítomnost</h3>
-                    <p class="text-slate-400 text-sm italic font-light serif-italic leading-relaxed">
+                    <p class="text-slate-500 text-sm italic font-light serif-italic leading-relaxed">
                         Nenabízím zázraky, ale stabilitu a podporu tam, kde se jí nedostává.
                     </p>
                 </div>
 
                 <div class="border-t border-slate-100 py-10">
                     <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-4 text-black">Pevný bod</h3>
-                    <p class="text-slate-400 text-sm italic font-light serif-italic leading-relaxed">
+                    <p class="text-slate-500 text-sm italic font-light serif-italic leading-relaxed">
                         Společně najdeme cestu ven z mlhy a pochybností.
                     </p>
                 </div>
@@ -163,7 +191,7 @@
         <div class="bg-black basis-2/3 flex items-center justify-center overflow-hidden">
             <div class="max-w-7xl mx-auto px-8 md:px-24 w-full">
                 <div class="mb-6 md:mb-10">
-                    <span class="text-[10px] uppercase tracking-[0.5em] text-slate-500 font-semibold block mb-2">
+                    <span class="text-[10px] uppercase tracking-[0.5em] text-slate-400 font-semibold block mb-2">
                         S čím ti mohu pomoci
                     </span>
                     <h2 class="text-3xl md:text-5xl font-serif leading-tight">Oblasti mé podpory</h2>
@@ -172,20 +200,20 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-0">
                     <div
                         class="border-t border-white/10 py-3 md:py-4 flex space-x-6 group hover:bg-white/5 transition-colors px-4 -mx-4">
-                        <span class="text-sm font-serif italic text-slate-600 mt-1">01</span>
+                        <span class="text-sm font-serif italic text-slate-400 mt-1">01</span>
                         <div>
                             <h3 class="text-lg font-serif mb-1 italic">Vztahy a rozchody</h3>
-                            <p class="text-slate-400 text-xs font-light leading-relaxed max-w-sm">
+                            <p class="text-slate-300 text-xs font-light leading-relaxed max-w-sm">
                                 Průvodcovství bolestivým procesem ukončení vztahu a hledání cesty dál.
                             </p>
                         </div>
                     </div>
                     <div
                         class="border-t border-white/10 py-3 md:py-4 flex space-x-6 group hover:bg-white/5 transition-colors px-4 -mx-4">
-                        <span class="text-sm font-serif italic text-slate-600 mt-1">02</span>
+                        <span class="text-sm font-serif italic text-slate-400 mt-1">02</span>
                         <div>
                             <h3 class="text-lg font-serif mb-1 italic">Toxické vztahy</h3>
-                            <p class="text-slate-400 text-xs font-light leading-relaxed max-w-sm">
+                            <p class="text-slate-300 text-xs font-light leading-relaxed max-w-sm">
                                 Rozpoznání manipulace, nastavení hranic a odchod z nezdravého prostředí.
                             </p>
                         </div>
@@ -194,7 +222,7 @@
             </div>
         </div>
 
-        <div class="bg-green-500 text-black basis-1/3 flex items-center justify-center px-8 md:px-24">
+        <div class="text-black basis-1/3 flex items-center justify-center px-8 md:px-24">
             <p class="text-xl md:text-2xl font-serif italic text-center max-w-3xl leading-relaxed">
                 „Někdy nepotřebuješ odpovědi. Jen prostor, kde můžeš být.“
             </p>
@@ -203,16 +231,21 @@
     </section>
 
 
-    <section id="omne" class="min-h-screen bg-slate-50 px-8 md:px-24 flex items-center justify-center pt-16">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+    <section id="omne" class="min-h-screen bg-slate-50 md:px-24 flex items-center justify-center pt-16">
+        <div class="px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
             <div
-                class="lg:col-span-4 bg-white p-12 shadow-sm border border-slate-100 aspect-[3/4] flex flex-col justify-between relative overflow-hidden group hover:shadow-xl transition-shadow duration-700">
-                <div>
-                    <span class="text-[10px] uppercase tracking-[0.4em] text-slate-300 font-semibold block mb-8">Kdo
+                class="lg:col-span-4 bg-white px-12 py-6 shadow-sm border border-slate-100 aspect-[3/4] flex flex-col justify-between relative overflow-hidden group hover:shadow-xl transition-shadow duration-700">
+                <div class="relative">
+                    <span class="text-[10px] uppercase tracking-[0.4em] text-slate-300 font-semibold block mb-4">Kdo
                         jsem</span>
-                    <h2 class="text-4xl font-serif leading-tight text-slate-900">Vladimíra Dvořák</h2>
-                    <p class="text-[10px] uppercase tracking-widest text-slate-400 mt-2">Tenerife, Spain</p>
+                    <h2 class="text-4xl font-serif leading-tight text-slate-900 mb-4">Vladimíra Dvořák</h2>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-400">Tenerife, Spain</p>
+                </div>
+
+                <div class="grow my-8 overflow-hidden rounded-sm bg-white">
+                    <img src="woman.png" alt="Vladimíra Dvořák"
+                        class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-700">
                 </div>
 
                 <div class="relative">
@@ -225,7 +258,7 @@
                 </div>
             </div>
 
-            <div class="lg:col-span-8 space-y-10">
+            <div class="lg:col-span-8 space-y-10 lg:ml-10">
                 <h3 class="text-2xl md:text-3xl font-serif italic text-slate-800 leading-snug">
                     Sdílím svoji cestu, abych ti usnadnila tu tvou
                 </h3>
@@ -273,10 +306,10 @@
 
     <section id="zkusenosti" class="h-screen flex flex-col overflow-hidden pt-16">
 
-        <div class="bg-white basis-3/4 flex items-center px-8 md:px-24">
-            <div class="max-w-7xl mx-auto w-full">
+        <div class="max-w-7xl  mx-auto basis-3/4 flex items-center px-8 md:px-24">
+            <div>
                 <div class="mb-12 md:mb-20">
-                    <span class="text-[10px] uppercase tracking-[0.5em] text-slate-300 font-semibold block mb-6">Slova
+                    <span class="text-[10px] uppercase tracking-[0.5em] text-slate-500 font-semibold block mb-6">Slova
                         žen</span>
                     <h2 class="text-4xl md:text-5xl font-serif leading-tight text-slate-900 italic">Zpětná vazba a
                         zkušenosti</h2>
@@ -285,7 +318,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
                     <div class="space-y-6">
                         <span
-                            class="text-[9px] uppercase tracking-[0.2em] text-slate-300 font-bold border-b border-slate-100 pb-2 block w-max">Toxický
+                            class="text-[9px] uppercase tracking-[0.2em] text-slate-500 font-bold border-b border-slate-100 pb-2 block w-max">Toxický
                             vztah</span>
                         <p class="text-slate-500 text-sm italic leading-relaxed font-light serif-italic">„Cítila jsem se
                             poprvé skutečně slyšena. Bez soudů, jen čisté přijetí.“</p>
@@ -293,14 +326,14 @@
 
                     <div class="space-y-6">
                         <span
-                            class="text-[9px] uppercase tracking-[0.2em] text-slate-300 font-bold border-b border-slate-100 pb-2 block w-max">Rozchod</span>
+                            class="text-[9px] uppercase tracking-[0.2em] text-slate-500 font-bold border-b border-slate-100 pb-2 block w-max">Rozchod</span>
                         <p class="text-slate-500 text-sm italic leading-relaxed font-light serif-italic">„Pomohlo mi to
                             uvidět věci v jasnějších barvách. Vladimíra mi dala pocit stability.“</p>
                     </div>
 
                     <div class="space-y-6">
                         <span
-                            class="text-[9px] uppercase tracking-[0.2em] text-slate-300 font-bold border-b border-slate-100 pb-2 block w-max">Návrat
+                            class="text-[9px] uppercase tracking-[0.2em] text-slate-500 font-bold border-b border-slate-100 pb-2 block w-max">Návrat
                             k sobě</span>
                         <p class="text-slate-500 text-sm italic leading-relaxed font-light serif-italic">„Díky podpoře
                             jsem našla odvahu odejít ze vztahu, který mě ničil.“</p>
@@ -308,7 +341,7 @@
 
                     <div class="space-y-6">
                         <span
-                            class="text-[9px] uppercase tracking-[0.2em] text-slate-300 font-bold border-b border-slate-100 pb-2 block w-max">Vyčerpání</span>
+                            class="text-[9px] uppercase tracking-[0.2em] text-slate-500 font-bold border-b border-slate-100 pb-2 block w-max">Vyčerpání</span>
                         <p class="text-slate-500 text-sm italic leading-relaxed font-light serif-italic">„Klid, který z
                             Vladimíry vyzařuje, mi pomohl zvládnout mé nejtěžší týdny.“</p>
                     </div>
@@ -317,10 +350,10 @@
         </div>
 
         <div class="bg-slate-50 basis-1/4 border-t border-slate-100 flex items-center px-8 md:px-24">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center w-full">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap- items-center w-full px-20">
 
                 <div class="lg:col-span-5">
-                    <span class="text-[10px] uppercase tracking-[0.4em] text-slate-300 font-semibold block mb-2">Důvěra
+                    <span class="text-[10px] uppercase tracking-[0.4em] text-slate-500 font-semibold block mb-2">Důvěra
                         & Partnerství</span>
                     <h2 class="text-2xl md:text-3xl font-serif italic leading-tight text-slate-900">Březnová konference
                     </h2>
@@ -335,8 +368,8 @@
                     <div
                         class="flex items-center space-x-6 text-[9px] uppercase tracking-[0.3em] font-bold text-slate-900 whitespace-nowrap">
                         <span>Březen 2024</span>
-                        <span class="w-8 h-px bg-slate-200"></span>
-                        <span class="text-slate-300">Praha</span>
+                        <span class="w-8 h-px bg-slate-500"></span>
+                        <span class="text-slate-500">Praha</span>
                     </div>
                 </div>
 
@@ -345,11 +378,11 @@
 
     </section>
 
-    <section id="kontakt" class="h-screen bg-white px-8 md:px-24 flex flex-col justify-center pt-16">
-        <div class="max-w-7xl mx-auto w-full">
+    <section id="kontakt" class="h-screen bg-white md:px-24 flex flex-col justify-center pt-16">
+        <div class="max-w-7xl mx-auto w-full px-8">
 
             <div class="text-center mb-16 md:mb-32">
-                <span class="text-[10px] uppercase tracking-[0.5em] text-slate-300 font-semibold block mb-8">Napiš
+                <span class="text-[10px] uppercase tracking-[0.5em] text-slate-500 font-semibold block mb-8">Napiš
                     mi</span>
                 <h2 class="text-4xl md:text-7xl font-serif italic leading-tight text-slate-900 px-4">
                     Udělej první krok ke klidu
@@ -357,7 +390,7 @@
                 <div class="w-16 h-px bg-slate-100 mx-auto mt-12"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-start">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-start px-16">
 
                 <div class="space-y-12">
                     <p class="text-slate-500 text-base md:text-lg leading-relaxed font-light max-w-sm">
@@ -365,7 +398,7 @@
                         se mi ozvat. Každá cesta začíná odvahou říct si o pomoc.
                     </p>
 
-                    <ul class="space-y-3 text-[10px] uppercase tracking-[0.3em] font-bold text-slate-300">
+                    <ul class="space-y-3 text-[10px] uppercase tracking-[0.3em] font-bold text-slate-400">
                         <li class="flex items-center space-x-3">
                             <span>Pravidelná podpora</span>
                         </li>
@@ -382,7 +415,7 @@
 
                     <div>
                         <span
-                            class="text-[10px] uppercase tracking-[0.3em] font-bold text-slate-300 block mb-4">E-mailová
+                            class="text-[10px] uppercase tracking-[0.3em] font-bold text-slate-400 block mb-4">E-mailová
                             adresa</span>
                         <a href="mailto:vladimira@tvenoveja.cz"
                             class="text-2xl md:text-4xl font-serif italic text-slate-900 hover:text-slate-600 transition-colors duration-500">
@@ -392,7 +425,7 @@
 
                     <div>
                         <span
-                            class="text-[10px] uppercase tracking-[0.3em] font-bold text-slate-300 block mb-4">Sociální
+                            class="text-[10px] uppercase tracking-[0.3em] font-bold text-slate-400 block mb-4">Sociální
                             sítě</span>
                         <a href="https://instagram.com/tve_nove_ja" target="_blank"
                             class="text-2xl md:text-4xl font-serif italic text-slate-900 hover:text-slate-600 transition-colors duration-500">
@@ -405,7 +438,7 @@
             </div>
 
             <div
-                class="mt-32 pt-12 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center text-[9px] uppercase tracking-[0.4em] text-slate-300 space-y-4 md:space-y-0">
+                class="mt-32 pt-12 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center text-[9px] uppercase tracking-[0.4em] text-slate-500 space-y-4 md:space-y-0">
                 <p>© 2024 Tvé nové já. Všechna práva vyhrazena.</p>
                 <div class="flex space-x-8">
                     <a href="#" class="hover:text-slate-900 transition">Ochrana údajů</a>
@@ -451,6 +484,35 @@
                 toggleMenu();
             });
         });
+
+        // ScrollSpy logic: Highlight active link in navigation
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav .hidden.md\\:flex a');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-50% 0px -50% 0px', // Trigger when section is in the middle of the screen
+            threshold: 0
+        };
+
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-black');
+                        link.classList.add('text-slate-500');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('text-black');
+                            link.classList.remove('text-slate-500');
+                        }
+                    });
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        sections.forEach(section => observer.observe(section));
     </script>
 </body>
 

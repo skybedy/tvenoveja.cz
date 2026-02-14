@@ -1,7 +1,0 @@
-@layer components {
-
-    /* Hlavní kontejner každé "stránky" */
-    .section-page {
-        @apply h-screen pt-[69px] flex flex-col items-center justify-center overflow-hidden scroll-mt-0;
-    }
-}
