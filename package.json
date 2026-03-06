@@ -1,0 +1,16 @@
+{
+  "name": "tvenoveja-cz",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run build:js && tailwindcss -i ./src/css/input.css -o ./dist/styles.css --watch",
+    "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/styles.css --minify",
+    "build:js": "cp ./src/js/main.js ./dist/main.js",
+    "build": "npm run build:css && npm run build:js"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
+  }
+}
